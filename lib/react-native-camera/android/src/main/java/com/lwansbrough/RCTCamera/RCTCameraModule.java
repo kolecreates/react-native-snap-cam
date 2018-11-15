@@ -4,7 +4,7 @@
  */
 
 package com.lwansbrough.RCTCamera;
-
+import com.lwansbrough.RCTCamera.R;
 import android.content.ContentValues;
 import android.content.res.Configuration;
 import android.hardware.Camera;
@@ -518,7 +518,7 @@ public class RCTCameraModule extends ReactContextBaseJavaModule
     @ReactMethod
     public void savePicture(final Promise promise){
       try{
-        File file = RCTCameraUtils.exportFile(mPictureFile, "Pack", false);
+        File file = RCTCameraUtils.exportFile(mPictureFile, "RNSnapCam", false);
           addToMediaStore(file.getAbsolutePath());
           final WritableMap response = new WritableNativeMap();
           response.putString("path", Uri.fromFile(file).toString());
@@ -541,7 +541,7 @@ public class RCTCameraModule extends ReactContextBaseJavaModule
     public void saveCurrentClip(final Promise promise){
       if(mVideoClips.empty()){promise.reject("No clip to save.");}
       try{
-        File file = RCTCameraUtils.exportFile(mVideoClips.peek(), "Pack", true);
+        File file = RCTCameraUtils.exportFile(mVideoClips.peek(), "RNSnapCam", true);
         addToMediaStore(file.getAbsolutePath());
         final WritableMap response = new WritableNativeMap();
         response.putString("path", Uri.fromFile(file).toString());
