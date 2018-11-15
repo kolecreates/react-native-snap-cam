@@ -1,4 +1,4 @@
-package com.example;
+package com.rnsnapcam;
 
 import android.app.Application;
 
