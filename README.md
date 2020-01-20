@@ -1,4 +1,5 @@
-
+# Get Started
+Reference [the demo component](https://github.com/Kolefn/react-native-snap-cam/blob/master/views/CameraView.js)
 
 
 Features | Demo 
